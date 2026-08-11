@@ -1,0 +1,99 @@
+﻿--- Task 1: Loading and Profiling ---
+Shape: (891, 15)
+
+Info:
+<class 'pandas.DataFrame'>
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 15 columns):
+ #   Column       Non-Null Count  Dtype   
+---  ------       --------------  -----   
+ 0   survived     891 non-null    int64   
+ 1   pclass       891 non-null    int64   
+ 2   sex          891 non-null    str     
+ 3   age          714 non-null    float64 
+ 4   sibsp        891 non-null    int64   
+ 5   parch        891 non-null    int64   
+ 6   fare         891 non-null    float64 
+ 7   embarked     889 non-null    str     
+ 8   class        891 non-null    category
+ 9   who          891 non-null    str     
+ 10  adult_male   891 non-null    bool    
+ 11  deck         203 non-null    category
+ 12  embark_town  889 non-null    str     
+ 13  alive        891 non-null    str     
+ 14  alone        891 non-null    bool    
+dtypes: bool(2), category(2), float64(2), int64(4), str(5)
+memory usage: 100.4 KB
+
+Describe:
+          survived      pclass   sex         age  ...  deck  embark_town  alive alone
+count   891.000000  891.000000   891  714.000000  ...   203          889    891   891
+unique         NaN         NaN     2         NaN  ...     7            3      2     2
+top            NaN         NaN  male         NaN  ...     C  Southampton     no  True
+freq           NaN         NaN   577         NaN  ...    59          644    549   537
+mean      0.383838    2.308642   NaN   29.699118  ...   NaN          NaN    NaN   NaN
+std       0.486592    0.836071   NaN   14.526497  ...   NaN          NaN    NaN   NaN
+min       0.000000    1.000000   NaN    0.420000  ...   NaN          NaN    NaN   NaN
+25%       0.000000    2.000000   NaN   20.125000  ...   NaN          NaN    NaN   NaN
+50%       0.000000    3.000000   NaN   28.000000  ...   NaN          NaN    NaN   NaN
+75%       1.000000    3.000000   NaN   38.000000  ...   NaN          NaN    NaN   NaN
+max       1.000000    3.000000   NaN   80.000000  ...   NaN          NaN    NaN   NaN
+
+[11 rows x 15 columns]
+
+Missing Percentages:
+age            19.865320
+embarked        0.224467
+deck           77.216611
+embark_town     0.224467
+dtype: float64
+Saved titanic.csv
+
+--- Task 2: Missing Value Handling ---
+Column 'age' has 19.87% missing (5-30%). Imputing with median/mode.
+Column 'embarked' has 0.22% missing (<5%). Dropping rows.
+Column 'deck' has 77.22% missing (>30%). Dropping column.
+Column 'embark_town' has 0.22% missing (<5%). Dropping rows.
+Shape after cleaning: (889, 14)
+
+--- Task 3: Univariate Analysis ---
+Age outliers: 65
+Fare outliers: 114
+
+Fare Mean: 32.10, Median: 14.45, Mode: 8.05
+Fare distribution is right-skewed.
+
+--- Task 4: Bivariate Analysis ---
+Survival Rate - Male: 18.89%, Female: 74.04%
+Survival Rate - Pclass 1: 62.62%
+Survival Rate - Pclass 2: 47.28%
+Survival Rate - Pclass 3: 24.24%
+Survival Rate - male, Pclass 1: 36.89%
+Survival Rate - male, Pclass 2: 15.74%
+Survival Rate - male, Pclass 3: 13.54%
+Survival Rate - female, Pclass 1: 96.74%
+Survival Rate - female, Pclass 2: 92.11%
+Survival Rate - female, Pclass 3: 50.00%
+
+Strongest correlations:
+pclass  fare     0.548193
+sibsp   parch    0.414542
+dtype: float64
+
+--- Task 5: Multivariate Data Story ---
+
+--- Task 6: Exploratory Check ---
+Before scaling:
+age     29.315152
+fare    32.096681
+dtype: float64
+age     12.977627
+fare    49.669545
+dtype: float64
+After scaling:
+age     2.717486e-16
+fare    1.398706e-16
+dtype: float64
+age     1.0
+fare    1.0
+dtype: float64

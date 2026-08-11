@@ -1,0 +1,17 @@
+MODULE 3 DEMO EVIDENCE
+
+Required baseline:
+MOCK_LLM=1
+
+1) Start:
+uvicorn app:app --host 127.0.0.1 --port 7860
+
+2) Policy retrieval example:
+POST /ask
+{"query":"What is the return policy for damaged grocery items?"}
+
+3) General question example:
+POST /ask
+{"query":"What is the capital of France?"}
+
+Record the actual JSON responses produced on the student's machine here after running the app.

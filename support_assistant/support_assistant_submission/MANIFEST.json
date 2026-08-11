@@ -1,0 +1,21 @@
+{
+  "project": "support_assistant",
+  "graded_mode": "MOCK_LLM=1",
+  "files": [
+    ".gitignore",
+    "DEMO_EVIDENCE.txt",
+    "Dockerfile",
+    "README.md",
+    "app.py",
+    "docs/doc_01.txt",
+    "docs/doc_02.txt",
+    "docs/doc_03.txt",
+    "docs/doc_04.txt",
+    "docs/doc_05.txt",
+    "docs/doc_06.txt",
+    "docs/doc_07.txt",
+    "docs/doc_08.txt",
+    "main.py",
+    "requirements.txt"
+  ]
+}

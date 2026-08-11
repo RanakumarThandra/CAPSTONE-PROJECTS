@@ -1,0 +1,67 @@
+﻿--- Reading Data ---
+
+--- Task 7: Data Splitting ---
+Class balance:
+survived
+0    0.616162
+1    0.383838
+Name: proportion, dtype: float64
+Train size: (712, 7) Test size: (179, 7)
+
+--- Task 8: Preprocessing ---
+Preprocessor defined with ColumnTransformer.
+
+--- Task 9 & 10: Model Training & Evaluation ---
+
+Logistic Regression:
+Confusion Matrix:
+[[98 12]
+ [23 46]]
+
+Decision Tree:
+Confusion Matrix:
+[[103   7]
+ [ 32  37]]
+
+Random Forest:
+Confusion Matrix:
+[[97 13]
+ [21 48]]
+
+Model Comparison:
+                     Accuracy  Precision    Recall        F1       AUC
+Logistic Regression  0.804469   0.793103  0.666667  0.724409  0.842688
+Decision Tree        0.782123   0.840909  0.536232  0.654867  0.806983
+Random Forest        0.810056   0.786885  0.695652  0.738462  0.840184
+
+--- Task 11: Imbalance Handling ---
+Baseline Class Balance:
+survived
+0    439
+1    273
+Name: count, dtype: int64
+
+Imbalance Handling Comparison (Random Forest):
+Baseline:
+Precision: 0.7869, Recall: 0.6957, F1: 0.7385
+Class Weight Balanced:
+Precision: 0.7778, Recall: 0.7101, F1: 0.7424
+SMOTE:
+Precision: 0.7536, Recall: 0.7536, F1: 0.7536
+
+--- Task 12: Hyperparameter Tuning ---
+Best params: {'classifier__max_depth': 10, 'classifier__max_features': 'sqrt', 'classifier__n_estimators': 200}
+Best F1 score from CV: 0.7468268348425597
+OOB Score of the best model: 0.8244
+
+--- Task 13: Regression Side-Task ---
+
+Regression Metrics:
+MAE: 19.14
+RMSE: 31.11
+R2: 0.37
+Adj R2: 0.33
+
+--- Task 15: Save Pipeline ---
+Saved 'best_pipeline.pkl'
+Predictions on 5 rows from reloaded pipeline: [0 0 0 0 1]
